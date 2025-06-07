@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequestMapping("/api/todos")
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
 public class ToDoController {
 
     private final TodoRepository repository;
@@ -36,4 +39,5 @@ public class ToDoController {
     public void deleteToDoList(@PathVariable Long id) {
         repository.deleteById(id);
     }
+
 }
